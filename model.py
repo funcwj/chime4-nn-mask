@@ -185,19 +185,25 @@ class EstimatorTrainer(object):
     
 
 class MaskComputer(object):
+    """
+        A simple wrapper to get the output of the mask estimator.
+        NOTE: apply sigmoid on original nnet's output
+    """
     def __init__(self, model_structure, state_file):
         self.estimator = model_structure
         self.estimator.load_state_dict(th.load(state_file))
         # setting evaluate mode
         self.estimator.eval()
+        # default using GPU
         self.estimator.cuda()
     
     def compute_masks(self, input_specs):
-        input_specs = Variable(th.from_numpy(input_specs))
+        # offload_to_gpu!
+        input_specs = offload_to_gpu(th.from_numpy(input_specs))
         t, n = input_specs.size(0), input_specs.size(1)
         # output of estimator do not apply sigmoid
         mask_n, mask_x = self.estimator(input_specs) 
-        mask_n = nn.functional.sigmoid(mask_n).view(t, n, -1).data.numpy()
-        mask_x = nn.functional.sigmoid(mask_x).view(t, n, -1).data.numpy()
+        mask_n = nn.functional.sigmoid(mask_n).view(t, n, -1).cpu().data.numpy()
+        mask_x = nn.functional.sigmoid(mask_x).view(t, n, -1).cpu().data.numpy()
         return mask_n, mask_x
 
