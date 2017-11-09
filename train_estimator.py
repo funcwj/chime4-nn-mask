@@ -17,7 +17,7 @@ def train(args):
     dataset = MaskDataset(args.data_dir, args.num_jobs, training=False)
     dt_loader = data.DataLoader(dataset=dataset, collate_fn=collate_func, shuffle=True)
     
-    estimator = EstimatorTrainer(513)
+    estimator = EstimatorTrainer(513, args.checkout_dir, learning_rate=args.lr)
     estimator.train(tr_loader, dt_loader, epoch=args.epoch)
 
 if __name__ == '__main__':
@@ -28,6 +28,10 @@ if __name__ == '__main__':
                         help="number of epoch to train the model")
     parser.add_argument("--nj", type=int, dest="num_jobs", default=15,
                         help="number of jobs to generate the dataset")
+    parser.add_argument("--lr", type=float, dest="lr", default=0.001,
+                        help="initial learning rate of the optimizer")
+    parser.add_argument("--checkout-dir", type=str, dest="checkout_dir", default='.',
+                        help="directory to save model parameters")
     args = parser.parse_args()
     train(args) 
 

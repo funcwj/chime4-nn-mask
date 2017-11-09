@@ -34,7 +34,7 @@ function CHiME4_simulate_data(id)
 
 addpath ../utils;
 upath='../data/audio/16kHz/isolated_6ch_track/'; % path to segmented utterances
-seperated='../data/audio/16kHz/seperated/'; % path to seperated utterances
+seperated='../data/audio/16kHz/seperated/'; % path to segmented utterances
 cpath='../data/audio/16kHz/embedded/'; % path to continuous recordings
 bpath='../data/audio/16kHz/backgrounds/'; % path to noise backgrounds
 apath='../data/annotations/'; % path to JSON annotations

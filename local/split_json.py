@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding=utf-8
-# wujian@17.11.7
 
 import argparse
 import json
@@ -29,7 +28,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Split json file into several parts')
     parser.add_argument('json_to_split', type=str, help="location of .json file to be splited")
     parser.add_argument('num_of_parts', type=int, help="number of parts to split")
-    parser.add_argument('--output_dir', type=str, default='.',
+    parser.add_argument('--output-dir', type=str, dest="output_dir", default='.',
                         help="directory to dump the splited json file")
     args = parser.parse_args()
     run(args)
