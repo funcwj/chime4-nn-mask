@@ -14,7 +14,7 @@ follow `run.sh`:
 
 NOTE: I reuse `beamforming.py`, `mask_estimation.py`, `utils.py`, `signal_processing.py` in [nn-gev](https://github.com/fgnt/nn-gev)
 
-### Experience
+### Experiment
 
 * 6ch
 
