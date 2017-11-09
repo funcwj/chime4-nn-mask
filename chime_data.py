@@ -65,7 +65,6 @@ def prepare_training_data(chime_data_dir, dest_dir, suffix_id):
         fpath, flist = gen_flist_simu(chime_data_dir, stage, suffix_id)
         export_flist = list()
         mkdir_p(os.path.join(dest_dir, stage))
-        break
         for f in tqdm.tqdm(flist, desc='Generating data for {}'.format(fpath)):
             clean_audio = get_audio_data(f, '_clean')
             noise_audio = get_audio_data(f, '_noise')

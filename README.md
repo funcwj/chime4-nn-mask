@@ -16,6 +16,15 @@ NOTE: I reuse `beamforming.py`, `mask_estimation.py`, `utils.py`, `signal_proces
 
 ### Experience
 
+* 6ch
+
+| Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
+|  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
+|Beamformit(SAT)| 14.36%  | 12.99%   | 21.24%    | 21.55%    |
+|  CGMM(SAT)    | 12.65%  | 11.39%   | 20.18%    | 19.72%    |
+|  BLSTM + GEV(SAT)    | 11.24%  | 10.77%   | 13.16%    | 15.59%    |
+
+
 ### Reference
 * Heymann J, Drude L, Haebumbach R. Neural network based spectral mask estimation for acoustic beamforming.[J]. IEEE Transactions on Industrial Electronics, 2016, 46(3):544-553.
 * https://github.com/fgnt/nn-gev
