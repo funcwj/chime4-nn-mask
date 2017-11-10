@@ -125,12 +125,19 @@ class LRScheduler(object):
             return False
 
 class EstimatorTrainer(object):
-    def __init__(self, num_bins, checkout_dir, learning_rate=0.001, momentum=0.9):
+    def __init__(self, num_bins, checkout_dir, optimizer="rmsprop", \
+            learning_rate=0.001, resume_state=""):
+        assert optimizer in ['rmsprop', 'adam']
         self.estimator = MaskEstimator(num_bins)
+        if resume_state:
+            self.estimator.load_state_dict(th.load(resume_state))
+            logging.info('resume from {}'.format(resume_state))
         logging.info('estimator structure: {}'.format(self.estimator))
+        logging.info('initial learning_rate: {}'.format(learning_rate))
         self.estimator.cuda()
         self.optimizer = th.optim.RMSprop(self.estimator.parameters(), \
-                lr=learning_rate, momentum=momentum) 
+                lr=learning_rate, momentum=0.9) if optimizer == "rmsprop" else \
+                th.optim.Adam(self.estimator.parameters(), lr=learning_rate)
         self.checkout_dir = checkout_dir
         if not os.path.exists(checkout_dir):
             os.makedirs(checkout_dir)
