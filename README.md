@@ -23,6 +23,13 @@ NOTE: I reuse `beamforming.py`, `mask_estimation.py`, `utils.py`, `signal_proces
 |Beamformit(SAT)| 14.36%  | 12.99%   | 21.24%    | 21.55%    |
 |  CGMM(SAT)    | 12.65%  | 11.39%   | 20.18%    | 19.72%    |
 |  BLSTM + GEV(SAT)    | 11.24%  | 10.77%   | 13.16%    | 15.59%    |
+|Beamformit(DNN)| 10.29%  | 9.59%   | 15.79%    | 16.73%    |
+| CGMM(DNN) | 8.76%  | 8.60%   | 15.23%    | 15.18%    |
+|  BLSTM + GEV(DNN)    | 7.93%  | 8.00%   | 10.05%    | 11.94%    |
+ Beamformit(DNN + sMBR) | 9.11%  | 8.46%   | 14.54%    | 15.07%    |
+|  CGMM(DNN + sMBR)    | 7.96%  | 7.61%   | 14.47%    | 14.05%    |
+|  BLSTM + GEV(DNN + sMBR)    | 7.17%  | 7.14%   | 9.18%    | 10.63%    |
+
 
 
 ### Reference
