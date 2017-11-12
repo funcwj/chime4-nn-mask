@@ -2,8 +2,6 @@
 
 Implementation of BLSTM mask estimator in pytorch.
 
-Updating...
-
 ### Usage
 follow `run.sh`:
 1. split `.json` file under `CHiME4/data/annotations`, so we can generate data parallelly.
@@ -16,7 +14,7 @@ NOTE: I reuse `beamforming.py`, `mask_estimation.py`, `utils.py`, `signal_proces
 
 ### Experiment
 
-* 6ch
+* 6ch(using official DNN baseline)
 
 | Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
 |  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
@@ -29,6 +27,8 @@ NOTE: I reuse `beamforming.py`, `mask_estimation.py`, `utils.py`, `signal_proces
  Beamformit(DNN + sMBR) | 9.11%  | 8.46%   | 14.54%    | 15.07%    |
 |  CGMM(DNN + sMBR)    | 7.96%  | 7.61%   | 14.47%    | 14.05%    |
 |  BLSTM + GEV(DNN + sMBR)    | 7.17%  | 7.14%   | 9.18%    | 10.63%    |
+|  BLSTM + GEV(5-gram)    | 6.00%  | 7.46%   | 7.61%    | 9.20%    |
+|  BLSTM + GEV(RNNLM)    | 5.21%  | 5.03%   | 6.48%    | 7.64%    |
 
 
 
