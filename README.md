@@ -30,6 +30,15 @@ NOTE: I reuse `beamforming.py`, `mask_estimation.py`, `utils.py`, `signal_proces
 |  BLSTM + GEV(5-gram)    | 6.00%  | 7.46%   | 7.61%    | 9.20%    |
 |  BLSTM + GEV(RNNLM)    | 5.21%  | 5.03%   | 6.48%    | 7.64%    |
 
+Adam brings less loss when training of BLSTM mask estimator finished, but do not bring lower WER for recognition tasks. 
+Results of experiment are followings:
+| Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
+|  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
+|  BLSTM_ADAM + GEV(SAT)    | 11.36%  | 11.00%   | 13.35%    | 15.67%    |
+|  BLSTM_ADAM + GEV(DNN)    | 8.15%  | 7.86%   | 10.24%    | 11.66%    |
+|  BLSTM_ADAM + GEV(DNN + sMBR)    | 7.33%  | 6.90%   | 9.60%    | 10.92%    |
+
+
 * 6ch(official DNN baseline, ch1,3-6)
 
 | Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
