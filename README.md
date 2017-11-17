@@ -14,7 +14,7 @@ NOTE: I reuse `beamforming.py`, `mask_estimation.py`, `utils.py`, `signal_proces
 
 ### Experiment
 
-* 6ch(using official DNN baseline)
+* 6ch(official DNN baseline, ch5)
 
 | Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
 |  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
@@ -30,7 +30,14 @@ NOTE: I reuse `beamforming.py`, `mask_estimation.py`, `utils.py`, `signal_proces
 |  BLSTM + GEV(5-gram)    | 6.00%  | 7.46%   | 7.61%    | 9.20%    |
 |  BLSTM + GEV(RNNLM)    | 5.21%  | 5.03%   | 6.48%    | 7.64%    |
 
+* 6ch(official DNN baseline, ch1,3-6)
 
+| Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
+|  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
+|  BLSTM + GEV(DNN)    | 7.39%  | 7.46%   | 8.88%    | 10.47%    |
+|  BLSTM + GEV(DNN + sMBR)    | 6.62%  | 6.36%   | 8.40%    | 9.35%    |
+|  BLSTM + GEV(5-gram)    | 5.35%  | 5.16%   | 7.08%    | 8.14%    |
+|  BLSTM + GEV(RNNLM)    | 4.56%  | 4.38%   | 6.08%    | 6.93%    |
 
 ### Reference
 * Heymann J, Drude L, Haebumbach R. Neural network based spectral mask estimation for acoustic beamforming.[J]. IEEE Transactions on Industrial Electronics, 2016, 46(3):544-553.
