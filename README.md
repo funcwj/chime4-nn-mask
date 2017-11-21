@@ -45,9 +45,12 @@ Results of experiment are followings:
 | Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
 |  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
 |  BLSTM + GEV(DNN)    | 7.39%  | 7.46%   | 8.88%    | 10.47%    |
+|  BLSTM + MVDR(DNN)    | 6.72%  | 7.32%   | 8.60%    | 12.21%    |
 |  BLSTM + GEV(DNN + sMBR)    | 6.62%  | 6.36%   | 8.40%    | 9.35%    |
+|  BLSTM + MVDR(DNN + sMBR)    | 5.93%  | 6.15%   | 8.04%    | 10.46%    |
 |  BLSTM + GEV(5-gram)    | 5.35%  | 5.16%   | 7.08%    | 8.14%    |
 |  BLSTM + GEV(RNNLM)    | 4.56%  | 4.38%   | 6.08%    | 6.93%    |
+
 
 ### Reference
 * Heymann J, Drude L, Haebumbach R. Neural network based spectral mask estimation for acoustic beamforming.[J]. IEEE Transactions on Industrial Electronics, 2016, 46(3):544-553.
