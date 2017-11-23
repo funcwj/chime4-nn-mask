@@ -24,9 +24,9 @@ NOTE: I reuse `beamforming.py`, `mask_estimation.py`, `utils.py`, `signal_proces
 |Beamformit(DNN)| 10.29%  | 9.59%   | 15.79%    | 16.73%    |
 | CGMM(DNN) | 8.76%  | 8.60%   | 15.23%    | 15.18%    |
 |  BLSTM + GEV(DNN)    | 7.93%  | 8.00%   | 10.05%    | 11.94%    |
- Beamformit(DNN + sMBR) | 9.11%  | 8.46%   | 14.54%    | 15.07%    |
+ Beamformit(sMBR) | 9.11%  | 8.46%   | 14.54%    | 15.07%    |
 |  CGMM(DNN + sMBR)    | 7.96%  | 7.61%   | 14.47%    | 14.05%    |
-|  BLSTM + GEV(DNN + sMBR)    | 7.17%  | 7.14%   | 9.18%    | 10.63%    |
+|  BLSTM + GEV(sMBR)    | 7.17%  | 7.14%   | 9.18%    | 10.63%    |
 |  BLSTM + GEV(5-gram)    | 6.00%  | 7.46%   | 7.61%    | 9.20%    |
 |  BLSTM + GEV(RNNLM)    | 5.21%  | 5.03%   | 6.48%    | 7.64%    |
 
@@ -37,7 +37,7 @@ Results of experiment are followings:
 |  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
 |  BLSTM_ADAM + GEV(SAT)    | 11.36%  | 11.00%   | 13.35%    | 15.67%    |
 |  BLSTM_ADAM + GEV(DNN)    | 8.15%  | 7.86%   | 10.24%    | 11.66%    |
-|  BLSTM_ADAM + GEV(DNN + sMBR)    | 7.33%  | 6.90%   | 9.60%    | 10.92%    |
+|  BLSTM_ADAM + GEV(sMBR)    | 7.33%  | 6.90%   | 9.60%    | 10.92%    |
 
 
 * 6ch(official DNN baseline, ch1,3-6)
@@ -45,9 +45,11 @@ Results of experiment are followings:
 | Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
 |  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
 |  BLSTM + GEV(DNN)    | 7.39%  | 7.46%   | 8.88%    | 10.47%    |
+|  BLSTM + GEV+BAN(DNN)    | 6.81%  | 7.16%   | 8.36%    | 11.50%    |
 |  BLSTM + MVDR(DNN)    | 6.72%  | 7.32%   | 8.60%    | 12.21%    |
-|  BLSTM + GEV(DNN + sMBR)    | 6.62%  | 6.36%   | 8.40%    | 9.35%    |
-|  BLSTM + MVDR(DNN + sMBR)    | 5.93%  | 6.15%   | 8.04%    | 10.46%    |
+|  BLSTM + GEV(sMBR)    | 6.62%  | 6.36%   | 8.40%    | 9.35%    |
+|  BLSTM + GEV+BAN(sMBR)    | 5.97%  | 6.26%   | 7.91%    | 10.13%    |
+|  BLSTM + MVDR(sMBR)    | 5.93%  | 6.15%   | 8.04%    | 10.46%    |
 |  BLSTM + GEV(5-gram)    | 5.35%  | 5.16%   | 7.08%    | 8.14%    |
 |  BLSTM + GEV(RNNLM)    | 4.56%  | 4.38%   | 6.08%    | 6.93%    |
 
