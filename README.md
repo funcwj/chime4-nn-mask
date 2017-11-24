@@ -46,9 +46,11 @@ Results of experiment are followings:
 |  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
 |  BLSTM + GEV(DNN)    | 7.39%  | 7.46%   | 8.88%    | 10.47%    |
 |  BLSTM + GEV+BAN(DNN)    | 6.81%  | 7.16%   | 8.36%    | 11.50%    |
+|  BLSTM + MVDR+VAD+GEV(DNN)    | 8.16%  | 7.47%   | 10.70%    | 10.53%    |
 |  BLSTM + MVDR(DNN)    | 6.72%  | 7.32%   | 8.60%    | 12.21%    |
 |  BLSTM + GEV(sMBR)    | 6.62%  | 6.36%   | 8.40%    | 9.35%    |
 |  BLSTM + GEV+BAN(sMBR)    | 5.97%  | 6.26%   | 7.91%    | 10.13%    |
+|  BLSTM + MVDR+VAD+GEV(sMBR)    | 7.51%  | 6.57%   | 10.11%    | 9.44%    |
 |  BLSTM + MVDR(sMBR)    | 5.93%  | 6.15%   | 8.04%    | 10.46%    |
 |  BLSTM + GEV(5-gram)    | 5.35%  | 5.16%   | 7.08%    | 8.14%    |
 |  BLSTM + GEV(RNNLM)    | 4.56%  | 4.38%   | 6.08%    | 6.93%    |
