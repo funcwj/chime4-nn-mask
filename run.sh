@@ -56,13 +56,14 @@ fi
 
 # step 5: enhance data
 # I do not modify the implemetation of beamforming in fgnt
-estimator=$checkout_dir/estimator_0.3324.pkl
-enhan_dst=../enhan/nngev_6mics_adam
-if [ $stage -eq 5 ]; then 
-    for x in et05_simu et05_real dt05_simu dt05_real; do 
-        echo "enhance $x.json..."
-        ./tools/run.pl JOB=1:$nj log/gev_$x.JOB.log \
-            ./apply_nngev_beamformer.py --enhan-dir $enhan_dst $estimator ${x}_JOB.json || exit 1
-    done
-    exit 0
-fi
+# NOTE: since I modified apply_nngev_beamformer.py, the following scripts could not work any more.
+# estimator=$checkout_dir/estimator_0.3324.pkl
+# enhan_dst=../enhan/nngev_6mics_adam
+# if [ $stage -eq 5 ]; then 
+#     for x in et05_simu et05_real dt05_simu dt05_real; do 
+#         echo "enhance $x.json..."
+#         ./tools/run.pl JOB=1:$nj log/gev_$x.JOB.log \
+#             ./apply_nngev_beamformer.py --enhan-dir $enhan_dst $estimator ${x}_JOB.json || exit 1
+#     done
+#     exit 0
+# fi
