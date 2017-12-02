@@ -14,45 +14,46 @@ NOTE: I reuse `beamforming.py`, `mask_estimation.py`, `utils.py`, `signal_proces
 
 ### Experiment
 
-* 6ch(official DNN baseline, ch5)
+* official DNN baseline(ch5)
 
 | Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
 |  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
-|Beamformit(SAT)| 14.36%  | 12.99%   | 21.24%    | 21.55%    |
-|  CGMM(SAT)    | 11.38%  | 11.30%   | 15.34%    | 17.27%    |
-|  BLSTM + GEV(SAT)    | 11.24%  | 10.77%   | 13.16%    | 15.59%    |
+|Beamformit(GMM)| 14.36%  | 12.99%   | 21.24%    | 21.55%    |
+|  CGMM(GMM)    | 11.38%  | 11.30%   | 15.34%    | 17.27%    |
+|  BLSTM + GEV(GMM)    | **11.24%**  | **10.77%**   | **13.16%**    | **15.59%**   |
 |Beamformit(DNN)| 10.29%  | 9.59%   | 15.79%    | 16.73%    |
-| CGMM(DNN) | 7.69%  | 8.40%   | 10.82%    | 13.51%    |
-|  BLSTM + GEV(DNN)    | 7.93%  | 8.00%   | 10.05%    | 11.94%    |
- Beamformit(sMBR) | 9.11%  | 8.46%   | 14.54%    | 15.07%    |
-|  CGMM(sMBR)    | 6.88%  | 7.58%   | 10.15%    | 12.12%    |
-|  BLSTM + GEV(sMBR)    | 7.17%  | 7.14%   | 9.18%    | 10.63%    |
+| CGMM(DNN) | **7.69%**  | 8.40%   | 10.82%    | 13.51%    |
+|  BLSTM + GEV(DNN)    | 7.93%  | **8.00%**   | **10.05%**    | **11.94%**    |
+| Beamformit(sMBR) | 9.11%  | 8.46%   | 14.54%    | 15.07%    |
+|  CGMM(sMBR)    | **6.88%**  | 7.58%   | 10.15%    | 12.12%    |
+|  BLSTM + GEV(sMBR)    | 7.17%  | **7.14%**   | **9.18%**    | **10.63%**    |
 |  BLSTM + GEV(5-gram)    | 6.00%  | 7.46%   | 7.61%    | 9.20%    |
 |  BLSTM + GEV(RNNLM)    | 5.21%  | 5.03%   | 6.48%    | 7.64%    |
 
-Adam brings less loss when training of BLSTM mask estimator finished, but do not bring lower WER for recognition tasks. 
+Adam brings less loss when training of BLSTM mask estimator finished, but do not bring lower WER for GEV in recognition tasks. 
 Results of experiment are followings:
 
 | Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
 |  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
-|  BLSTM_ADAM + GEV(SAT)    | 11.36%  | 11.00%   | 13.35%    | 15.67%    |
-|  BLSTM_ADAM + GEV(DNN)    | 8.15%  | 7.86%   | 10.24%    | 11.66%    |
-|  BLSTM_ADAM + GEV(sMBR)    | 7.33%  | 6.90%   | 9.60%    | 10.92%    |
+|  GMM    | 11.36%  | 11.00%   | 13.35%    | 15.67%    |
+|  DNN    | 8.15%  | 7.86%   | 10.24%    | 11.66%    |
+|  sMBR   | 7.33%  | 6.90%   | 9.60%    | 10.92%    |
 
 
-* 6ch(official DNN baseline, ch1,3-6)
+* official DNN baseline(ch1,3-6)
 
 | Methods | Dev Simu | Dev Real | Eval Simu | Eval Real |
 |  :---:  |  :---:   |   :---:  |   :---:   |   :---:   |
-|  BLSTM + GEV(DNN)    | 7.39%  | 7.46%   | 8.88%    | 10.47%    |
-|  BLSTM + GEV+BAN(DNN)    | 6.81%  | 7.16%   | 8.36%    | 11.50%    |
-|  BLSTM + MVDR(DNN)    | 6.72%  | 7.32%   | 8.60%    | 12.21%    |
-|  BLSTM + GEV(sMBR)    | 6.62%  | 6.36%   | 8.40%    | 9.35%    |
-|  BLSTM + GEV+BAN(sMBR)    | 5.97%  | 6.26%   | 7.91%    | 10.13%    |
-|  BLSTM + MVDR(sMBR)    | 5.93%  | 6.15%   | 8.04%    | 10.46%    |
-|  BLSTM + GEV(5-gram)    | 5.35%  | 5.16%   | 7.08%    | 8.14%    |
-|  BLSTM + GEV(RNNLM)    | 4.56%  | 4.38%   | 6.08%    | 6.93%    |
+|  GEV(DNN)    | 7.39%  | 7.46%   | 8.88%    | **10.47%**    |
+|  GEV+BAN(DNN)    | 6.81%  | **7.16%**   | **8.36%**    | 11.50%    |
+|  MVDR(DNN)    | **6.72%**  | 7.32%   | 8.60%    | 12.21%    |
+|  GEV(sMBR)    | 6.62%  | 6.36%   | 8.40%    | **9.35%**    |
+|  GEV+BAN(sMBR)    | 5.97%  | 6.26%   | **7.91%**    | 10.13%    |
+|  MVDR(sMBR)    | **5.93%**  | **6.15%**   | 8.04%    | 10.46%    |
+|  GEV(5-gram)    | 5.35%  | 5.16%   | 7.08%    | 8.14%    |
+|  GEV(RNNLM)    | 4.56%  | 4.38%   | 6.08%    | 6.93%    |
 
+NOTE: other experiment results will not be presented here any more.
 
 ### Reference
 * Heymann J, Drude L, Haebumbach R. Neural network based spectral mask estimation for acoustic beamforming.[J]. IEEE Transactions on Industrial Electronics, 2016, 46(3):544-553.
